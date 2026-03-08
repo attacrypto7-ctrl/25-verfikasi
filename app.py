@@ -1,6 +1,8 @@
 from flask import Flask, render_template_string, request, redirect
 
+# Inisialisasi aplikasi
 app = Flask(__name__)
+
 
 # Template HTML Utama
 HTML_FORM = """
@@ -144,7 +146,4 @@ def index():
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
-    # Persiapan buat Vercel
 app = app
