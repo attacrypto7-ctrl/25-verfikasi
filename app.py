@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, request
+from flask import Flask, render_template_string, request, redirect
 
 app = Flask(__name__)
 
@@ -131,7 +131,8 @@ def index():
     msg = ""
     if request.method == 'POST':
         user_input = request.form.get('password')
-        
+       
+
         if user_input == "aman":
             msg = "✅ AKSES DITERIMA. Selamat datang, Admin."
             return render_template_string(HTML_FORM, msg=msg)
@@ -141,8 +142,9 @@ def index():
             
     return render_template_string(HTML_FORM, msg=msg)
 
-# Persiapan buat Vercel
-app = app
+
 
 if __name__ == '__main__':
     app.run(debug=True)
+    # Persiapan buat Vercel
+app = app
